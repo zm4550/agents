@@ -5,7 +5,7 @@ from research_manager import ResearchManager
 from styles import CSS, JS, EXAMPLES, HEADER_HTML
 
 load_dotenv(override=True)
-
+os.environ["OPENAI_API_KEY"] = os.environ.get("OPENAI_API_KEY", "").strip()
 
 async def run(query: str):
     async for status_update in ResearchManager().run(query):
